@@ -1,0 +1,40 @@
+<div style="margin-top:130px;width: 900px;height: 900px;margin-left: 250px;">
+    
+       
+      
+<div class="container pt-3">
+    <div>
+        <mat-card style="margin-left: 10%; margin-right: 20%;box-shadow: 0 60px 80px rgba(238, 29, 29, 0.2)">
+            <mat-card-title>Login Form</mat-card-title>
+            <form [formGroup]="loginUserForm" (ngSubmit)="OnSubmit()">
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline" style="width: 100%;">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline" style="width: 100%;">
+                                <mat-label>Password</mat-label>
+                                <input matInput formControlName="password" type="password">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row" style="justify-content: center!important;">
+                        <button mat-raised-button color="primary" type="submit" style="width: 80%;">Submit</button>
+                    </div>
+                    <div class="row pt-2" style="justify-content: center!important;">
+                        <button mat-raised-button color="light" [routerLink]="'/signup'" style="color: rgb(25, 119, 225);cursor: pointer;width: 80%;">SignUp</button>
+                </div>
+                </mat-card-content>
+            </form>
+        </mat-card>
+    </div>
+</div>
+</div>

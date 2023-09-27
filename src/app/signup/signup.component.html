@@ -1,0 +1,77 @@
+<div style="margin-top:120px;width: 500px;height: 200px;margin-left: 300px;">
+    
+<div class="container" style="padding-top: 0rem;box-shadow: 0 60px 80px rgba(238, 29, 29, 0.2)">
+    <!--<h2>For Players</h2>-->
+    <mat-card>
+        <mat-card-title style="text-align:center">Signup User</mat-card-title>
+        <form [formGroup]="UserRegistrationForm" (ngSubmit)="OnSubmit()">
+        <div class="row">
+            <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Username</mat-label>
+                        <input placeholder="Username" matInput formControlName="username">
+                    </mat-form-field>
+            </div>
+
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Email</mat-label>
+                    <input placeholder="Email" matInput formControlName="email">
+                </mat-form-field>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                      <mat-option *ngFor="let gender of genderValues" [value]="gender.value">
+                        {{gender.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Password</mat-label>
+                        <input placeholder="Username" type="password" matInput formControlName="password">
+                    </mat-form-field>
+            </div>
+
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput  #confirmPassword>
+                </mat-form-field>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button mat-raised-button color="primary" style="width: 100%;" type="submit">Submit</button>
+            </div>
+            <div class="col-6"> 
+                <button mat-raised-button color="warn" style="width: 100%;">Clear</button>
+            </div>
+        </div>
+        
+        </form>
+        <div style="color: rgb(89, 89, 241);text-align: center;padding-top: 20px;cursor: pointer;" [routerLink]="'/login'">
+            Login Here!
+        </div>
+    </mat-card>
+</div>
+</div>
